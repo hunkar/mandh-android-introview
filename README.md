@@ -39,7 +39,7 @@ Add implementation to app/build.gradle
 ```
 dependencies {
     ...
-    implementation 'com.github.hunkar:mandh-android-introview:1.0.0'
+    implementation 'com.github.hunkar:mandh-android-introview:1.0.1'
     ...
 }
 ```

@@ -5,7 +5,7 @@ import android.graphics.Color;
 public class IntroData {
     String title, description;
     int image, backgroundImage;
-    int titleColor, descriptionColor, bacgroundColor, titleFont, descriptionFont;
+    int titleColor, descriptionColor, backgroundColor, titleFont, descriptionFont;
 
     /**
      * Detailed constructor of intro data
@@ -16,19 +16,19 @@ public class IntroData {
      * @param backgroundImage  int Drawable background image reference id
      * @param titleColor       int Color of top title
      * @param descriptionColor int Color of bottom description
-     * @param bacgroundColor   int Color of background
+     * @param backgroundColor   int Color of background
      * @param titleFont        int top title font
      * @param descriptionFont  int bottom description font
      */
     public IntroData(String title, String description, int image, int backgroundImage, int titleColor,
-                     int descriptionColor, int bacgroundColor, int titleFont, int descriptionFont) {
+                     int descriptionColor, int backgroundColor, int titleFont, int descriptionFont) {
         this.title = title;
         this.description = description;
         this.image = image;
         this.backgroundImage = backgroundImage;
         this.titleColor = titleColor;
         this.descriptionColor = descriptionColor;
-        this.bacgroundColor = bacgroundColor;
+        this.backgroundColor = backgroundColor;
         this.titleFont = titleFont;
         this.descriptionFont = descriptionFont;
     }
@@ -160,7 +160,7 @@ public class IntroData {
      * @return int
      */
     public int getBacgroundColor() {
-        return bacgroundColor == 0 ? Color.WHITE : bacgroundColor;
+        return backgroundColor == 0 ? Color.WHITE : backgroundColor;
     }
 
     /**
@@ -169,7 +169,7 @@ public class IntroData {
      * @param bacgroundColor int
      */
     public void setBacgroundColor(int bacgroundColor) {
-        this.bacgroundColor = bacgroundColor;
+        this.backgroundColor = bacgroundColor;
     }
 
     /**
