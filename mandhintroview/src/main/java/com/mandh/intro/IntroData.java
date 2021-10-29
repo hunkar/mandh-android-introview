@@ -4,8 +4,7 @@ import android.graphics.Color;
 
 public class IntroData {
     String title, description;
-    int image, backgroundImage;
-    int titleColor, descriptionColor, backgroundColor, titleFont, descriptionFont;
+    int image, backgroundImage, titleColor, descriptionColor, backgroundColor, titleFont, descriptionFont;
 
     /**
      * Detailed constructor of intro data

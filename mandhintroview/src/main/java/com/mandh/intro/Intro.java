@@ -10,6 +10,9 @@ import java.util.ArrayList;
 public class Intro {
     private Context context;
     private ArrayList<IntroData> introData;
+    int image, backgroundImage, titleColor, descriptionColor, backgroundColor, titleFont, descriptionFont;
+    boolean commonStyle = false;
+
     private static SharedPreferences preferences;
     private static String key = "mandh-intro-view-storage";
 
@@ -21,6 +24,16 @@ public class Intro {
     public Intro(Context context, ArrayList<IntroData> introData) {
         this.context = context;
         this.introData = introData;
+    }
+
+    public Intro(Context context, ArrayList<IntroData> introData, int backgroundImage, int textColor){
+        this.context = context;
+        this.introData = introData;
+        this.backgroundImage = backgroundImage;
+        this.titleColor = textColor;
+        this.descriptionColor = textColor;
+
+        this.commonStyle = true;
     }
 
     /**
@@ -68,6 +81,17 @@ public class Intro {
      */
     public void showIntro() {
         if (introData != null && introData.size() > 0) {
+            if(this.commonStyle){
+                for(int counter = 0; counter < introData.size(); counter++){
+                    introData.get(counter).setBacgroundColor(this.backgroundColor);
+                    introData.get(counter).setTitleColor(this.titleColor);
+                    introData.get(counter).setDescriptionColor(this.descriptionColor);
+                    introData.get(counter).setBackgroundImage(this.backgroundImage);
+                    introData.get(counter).setTitleFont(this.titleFont);
+                    introData.get(counter).setDescriptionFont(this.descriptionFont);
+                }
+            }
+
             CommonData.setData(introData);
             CommonData.onDoneListener = data -> setShowState(true);
             CommonData.onSkipListener = data -> setShowState(true);
@@ -75,5 +99,68 @@ public class Intro {
             Intent toIntro = new Intent(context, IntroActivity.class);
             context.startActivity(toIntro);
         }
+    }
+
+    public int getImage() {
+        return image;
+    }
+
+    public void setImage(int image) {
+        this.image = image;
+        this.commonStyle = true;
+    }
+
+    public int getBackgroundImage() {
+        return backgroundImage;
+    }
+
+    public void setBackgroundImage(int backgroundImage) {
+        this.backgroundImage = backgroundImage;
+        this.commonStyle = true;
+    }
+
+    public int getTitleColor() {
+        return titleColor;
+    }
+
+    public void setTitleColor(int titleColor) {
+        this.titleColor = titleColor;
+        this.commonStyle = true;
+    }
+
+    public int getDescriptionColor() {
+        return descriptionColor;
+    }
+
+    public void setDescriptionColor(int descriptionColor) {
+        this.descriptionColor = descriptionColor;
+        this.commonStyle = true;
+    }
+
+    public int getBackgroundColor() {
+        return backgroundColor;
+    }
+
+    public void setBackgroundColor(int backgroundColor) {
+        this.backgroundColor = backgroundColor;
+        this.commonStyle = true;
+    }
+
+    public int getTitleFont() {
+        return titleFont;
+    }
+
+    public void setTitleFont(int titleFont) {
+        this.titleFont = titleFont;
+        this.commonStyle = true;
+    }
+
+    public int getDescriptionFont() {
+        return descriptionFont;
+    }
+
+    public void setDescriptionFont(int descriptionFont) {
+        this.descriptionFont = descriptionFont;
+        this.commonStyle = true;
     }
 }

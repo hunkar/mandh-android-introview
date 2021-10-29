@@ -2,6 +2,7 @@ package com.mandh.introview;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.widget.Button;
 
@@ -35,6 +36,8 @@ public class MainActivity extends AppCompatActivity {
                 R.drawable.intro_second));
 
         intro = new Intro(MainActivity.this, introData);
+        intro.setTitleColor(Color.RED);
+
         show = findViewById(R.id.show_intro);
 
         intro.checkAndShowIntro();
