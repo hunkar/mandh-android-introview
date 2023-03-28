@@ -1,3 +1,4 @@
 rootProject.name = "Mandh Intro View"
+
 include ':app'
 include ':mandhintroview'
