@@ -2,6 +2,7 @@
 
 <div align="center">
 
+![Release](https://jitpack.io/v/hunkar/mandh-android-introview.svg)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](/LICENSE)
 
 </div>
@@ -39,7 +40,7 @@ Add implementation to app/build.gradle
 ```
 dependencies {
     ...
-    implementation 'com.github.hunkar:mandh-android-introview:1.0.1'
+    implementation 'com.github.hunkar:mandh-android-introview:1.1.4'
     ...
 }
 ```
